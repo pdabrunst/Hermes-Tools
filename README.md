@@ -6,7 +6,7 @@ Report any issues on the [Issues](https://github.com/pdabrunst/Hermes-Tools/issu
 
 ## Contents
 
-### Linux/hermes.sh
+### Linux/Hermes-UI.sh
 
 Terminal menu launcher for Hermes chat sessions.
 
@@ -20,7 +20,7 @@ Terminal menu launcher for Hermes chat sessions.
 #### Usage
 
 ```bash
-./Linux/hermes.sh
+./Linux/Hermes-UI.sh
 ```
 
 #### Requirements
@@ -33,22 +33,22 @@ The script will attempt to install missing dependencies automatically on first r
 
 ---
 
-### Windows/hermes.bat
+### Windows/Hermes-UI.bat
 
 One-file launcher for Hermes chat sessions on Windows.
 
 - Same menu features as the Linux version
-- Embedded PowerShell - no separate `.ps1` file needed
+- Embedded PowerShell — no separate `.ps1` file needed
 - Auto-detects `pwsh` or `powershell`
 - Auto-detects the Hermes database location
 - One-time dependency installer using `winget`, `choco`, or `scoop`
 
 #### Usage
 
-Double-click `Windows\hermes.bat` or run it from Command Prompt:
+Double-click `Windows\Hermes-UI.bat` or run it from Command Prompt:
 
 ```cmd
-Windows\hermes.bat
+Windows\Hermes-UI.bat
 ```
 
 #### Requirements

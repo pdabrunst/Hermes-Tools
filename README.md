@@ -1,3 +1,5 @@
+## Report any issues in the [Issues](https://github.com/pdabrunst/Hermes-Tools/issues) page (https://github.com/pdabrunst/Hermes-Tools/issues)
+
 # Hermes-Tools
 
 Utility scripts for [Hermes Agent](https://hermes-agent.nousresearch.com/).

@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -eEuo pipefail
 
 DEP_FLAG="$HOME/.hermes/.deps_installed"
+
+friendly_error() {
+    echo ""
+    echo "$1"
+    read -rp "Press Enter to exit..."
+    exit 1
+}
+
+trap 'friendly_error "An unexpected error occurred at line $LINENO."' ERR
 
 # One-time dependency installer with OS-aware package manager detection.
 ensure_dependencies() {
@@ -41,8 +50,7 @@ ensure_dependencies() {
     fi
 
     if [[ -z "$pkg_manager" ]]; then
-        echo "ERROR: Could not detect package manager. Please install manually: ${missing[*]}"
-        exit 1
+        friendly_error "Python is required, but no supported package manager was found. Please install manually: ${missing[*]}"
     fi
 
     echo "Using package manager: $pkg_manager"
@@ -122,13 +130,12 @@ find_hermes_db() {
     timeout 10s find / -name "state.db" -path "*/.hermes/*" -type f 2>/dev/null && return 0
 
     echo ""
-    return 1
+    return 0
 }
 
 DB="$(find_hermes_db || true)"
 if [[ -z "$DB" || ! -f "$DB" ]]; then
-    echo "ERROR: Could not locate Hermes database (state.db)."
-    exit 1
+    friendly_error "Hermes Database Not Found - Is Hermes installed?"
 fi
 
 # Query Hermes SQLite state for existing chats in the default profile.

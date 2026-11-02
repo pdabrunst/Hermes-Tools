@@ -1,4 +1,4 @@
-## Report any issues in the [Issues](https://github.com/pdabrunst/Hermes-Tools/issues) page (https://github.com/pdabrunst/Hermes-Tools/issues)
+### Report any issues in the [Issues](https://github.com/pdabrunst/Hermes-Tools/issues)
 
 # Hermes-Tools
 
